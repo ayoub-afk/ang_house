@@ -1,5 +1,112 @@
-<form>
-    <div class="mb-3">
+<!-- <button mat-raised-button (click)="isEditable = !isEditable">
+  {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+</button> -->
+
+<mat-stepper linear #stepper>
+  <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>personal informations</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label> name</mat-label>
+        <input matInput formControlName="firstCtrl" placeholder="Last name" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>family name</mat-label>
+        <input matInput formControlName="firstCtrl" placeholder="Last name" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label> e-mail</mat-label>
+        <input type="email" matInput formControlName="firstCtrl" placeholder="Last name" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>phone</mat-label>
+        <input matInput formControlName="firstCtrl" placeholder="Last name" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>adresse</mat-label>
+        <input matInput formControlName="firstCtrl" placeholder="Last name" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>home infos</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label> adresse</mat-label>
+        <input matInput formControlName="firstCtrl"  required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>room num</mat-label>
+        <input matInput formControlName="firstCtrl"  required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>postal code</mat-label>
+        <input matInput formControlName="firstCtrl" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>offre</mat-label>
+        <input matInput formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+    <form [formGroup]="secondFormGroup">
+      <div class="concon">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, impedit. Facere repellat est alias doloribus eos minima ex, aut sunt nesciunt, dolorem voluptate rem, eligendi at corporis repellendus doloremque ducimus?
+
+        </p>
+
+      </div>
+      <ng-template matStepLabel>verification</ng-template>
+      <p>
+        write (ACCEPT)
+      </p>
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+
+
+    <!-- <form>
+      <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Name</label>
         <input type="email" class="form-control"  aria-describedby="emailHelp">
       </div>
@@ -24,4 +131,9 @@
     <button type="submit" class="btn btn-primary">Submit</button>
     <button type="reset" class="btn btn-danger">Rreset</button>
   </div>
-  </form>
+      </form>
+      <div class="s-form">
+        <img src="../../assets/home-location-4996143-4159749.png" id="ii">
+        <div class="mor"></div>
+      </div> -->
+
